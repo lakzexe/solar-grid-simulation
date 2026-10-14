@@ -19,7 +19,7 @@ class UserPublic(BaseModel):
     email: str
     name: str
     organization: str = ""
-    currency: str = "USD"
+    currency: str = "LKR"
     created_at: datetime
 
 

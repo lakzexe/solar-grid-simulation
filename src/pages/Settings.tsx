@@ -12,7 +12,7 @@ import { apiGet, apiPost, apiPut } from "@/lib/api";
 import { errorMessage, qk, useMe } from "@/lib/hooks";
 import type { IntegrationStatus, MessageResponse, ProfileUpdate, UserPublic } from "@/lib/types";
 
-const CURRENCIES = ["USD", "EUR", "GBP", "AUD", "CAD", "JPY", "INR"];
+const CURRENCIES = ["LKR", "USD", "EUR", "GBP", "AUD", "CAD", "JPY", "INR"];
 
 const STATUS_PILL = {
   connected: "bg-[#EBF8F2] text-[#064E3B] border-[#A7F3D0]",
@@ -31,7 +31,7 @@ export default function Settings() {
   const [profile, setProfile] = useState<ProfileUpdate>({
     name: "",
     organization: "",
-    currency: "USD",
+    currency: "LKR",
   });
   const [geminiKey, setGeminiKey] = useState("");
 
@@ -40,7 +40,7 @@ export default function Settings() {
       setProfile({
         name: me.data.name || "",
         organization: me.data.organization || "",
-        currency: me.data.currency || "USD",
+        currency: me.data.currency || "LKR",
       });
     }
   }, [me.data]);

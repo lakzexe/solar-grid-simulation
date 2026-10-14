@@ -25,6 +25,6 @@ export function useActiveRun() {
 }
 
 export function fmt(value: number, digits = 1) { return Number.isFinite(value) ? value.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits }) : "-"; }
-export function money(value: number, currency = "USD") { return Number.isFinite(value) ? new Intl.NumberFormat(undefined, { style: "currency", currency, maximumFractionDigits: 2 }).format(value) : "-"; }
+export function money(value: number, currency = "LKR") { return Number.isFinite(value) ? new Intl.NumberFormat(undefined, { style: "currency", currency, maximumFractionDigits: 2 }).format(value) : "-"; }
 export function hh(hour: number) { return `${String(Math.round(hour)).padStart(2, "0")}:00`; }
 export function errorMessage(error: unknown) { return error instanceof Error ? error.message : "Something went wrong. Please try again."; }

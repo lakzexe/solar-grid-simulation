@@ -15,7 +15,7 @@ export default function Scenarios() {
   const qc = useQueryClient();
   const me = useMe();
   const runs = useRuns();
-  const currency = me.data?.currency ?? "USD";
+  const currency = me.data?.currency ?? "LKR";
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [comparisonExp, setComparisonExp] = useState<Explanation | null>(null);

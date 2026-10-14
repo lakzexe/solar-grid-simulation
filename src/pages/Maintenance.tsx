@@ -194,7 +194,7 @@ export default function Maintenance() {
         title="Predictive maintenance & cleaning"
         description="Monitor panel soiling losses, module degradation, inverter conversion efficiency, and automated cleaning payback schedules."
       />
-      <RunView>{(run) => <MaintenanceBody run={run} currency={me.data?.currency ?? "USD"} />}</RunView>
+      <RunView>{(run) => <MaintenanceBody run={run} currency={me.data?.currency ?? "LKR"} />}</RunView>
     </PageFade>
   );
 }

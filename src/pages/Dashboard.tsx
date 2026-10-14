@@ -139,7 +139,7 @@ export default function Dashboard() {
           </Link>
         }
       />
-      <RunView>{(run) => <DashboardBody run={run} currency={me.data?.currency ?? "USD"} />}</RunView>
+      <RunView>{(run) => <DashboardBody run={run} currency={me.data?.currency ?? "LKR"} />}</RunView>
     </PageFade>
   );
 }

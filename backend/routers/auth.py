@@ -26,7 +26,7 @@ async def register(body: RegisterRequest, response: Response):
     email = body.email.lower()
     if await db.users.find_one({"email": email}):
         raise HTTPException(409, "An account with this email already exists")
-    user = {"id": str(uuid.uuid4()), "email": email, "name": body.name, "organization": "", "currency": "USD",
+    user = {"id": str(uuid.uuid4()), "email": email, "name": body.name, "organization": "", "currency": "LKR",
             "password_hash": hash_password(body.password), "created_at": datetime.now(timezone.utc)}
     await db.users.insert_one(user)
     await create_demo_runs(user["id"])

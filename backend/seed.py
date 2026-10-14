@@ -21,11 +21,11 @@ async def main() -> None:
     user = await db.users.find_one({"email": DEMO_EMAIL})
     if not user:
         user = {"id": str(uuid.uuid4()), "email": DEMO_EMAIL, "name": "Demo Engineer",
-                "organization": "SolarGrid Demonstration Community", "currency": "USD",
+                "organization": "SolarGrid Demonstration Community", "currency": "LKR",
                 "password_hash": hash_password(DEMO_PASSWORD), "created_at": datetime.now(timezone.utc)}
         await db.users.insert_one(user)
     else:
-        await db.users.update_one({"id": user["id"]}, {"$set": {"password_hash": hash_password(DEMO_PASSWORD)}})
+        await db.users.update_one({"id": user["id"]}, {"$set": {"password_hash": hash_password(DEMO_PASSWORD), "currency": "LKR"}})
     await db.runs.delete_many({"user_id": user["id"], "is_demo": True})
     await create_demo_runs(user["id"])
     print(f"Seeded {DEMO_EMAIL}")
