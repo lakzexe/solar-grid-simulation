@@ -16,8 +16,8 @@ const HERO =
 
 export function AuthShell({ children, side }: { children: ReactNode; side: ReactNode }) {
   return (
-    <div className="grid min-h-svh bg-warm lg:h-svh lg:min-h-svh lg:grid-cols-[1.1fr_1fr]">
-      <div className="relative hidden overflow-hidden bg-forest lg:block">
+    <div className="grid min-h-[100dvh] bg-warm lg:h-[100dvh] lg:min-h-[100dvh] lg:grid-cols-[1.1fr_1fr]">
+      <div className="relative hidden h-full overflow-hidden bg-forest lg:block">
         <img src={HERO} alt="Rooftop solar on a residential street" className="absolute inset-0 size-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/20" />
         <div className="relative flex h-full flex-col justify-between p-12 text-white">
@@ -28,7 +28,7 @@ export function AuthShell({ children, side }: { children: ReactNode; side: React
           {side}
         </div>
       </div>
-      <div className="flex items-center justify-center p-6 sm:p-10">
+      <div className="flex h-full items-center justify-center p-6 sm:p-10">
         <div className="w-full max-w-sm">{children}</div>
       </div>
       <Toaster richColors position="bottom-right" />
