@@ -1,7 +1,14 @@
 import os
+import sys
 import logging
+from pathlib import Path
 from contextlib import asynccontextmanager
 from dotenv import load_dotenv
+
+# Ensure backend directory is in sys.path
+backend_dir = Path(__file__).resolve().parent
+if str(backend_dir) not in sys.path:
+    sys.path.insert(0, str(backend_dir))
 
 load_dotenv()
 from fastapi import FastAPI, Depends, HTTPException, Body
