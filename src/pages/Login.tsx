@@ -16,7 +16,7 @@ const HERO =
 
 export function AuthShell({ children, side }: { children: ReactNode; side: ReactNode }) {
   return (
-    <div className="grid min-h-svh bg-warm lg:grid-cols-[1.1fr_1fr]">
+    <div className="grid min-h-svh bg-warm lg:h-svh lg:min-h-svh lg:grid-cols-[1.1fr_1fr]">
       <div className="relative hidden overflow-hidden bg-forest lg:block">
         <img src={HERO} alt="Rooftop solar on a residential street" className="absolute inset-0 size-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/20" />
